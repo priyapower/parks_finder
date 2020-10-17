@@ -6,7 +6,7 @@ feature "user can search for parks" do
     select "Tennessee", from: :state
     click_on "Find Parks"
     expect(current_path).to eq(parks_path)
-
+    
     expect(page).to have_content("Parks Found: 16")
     expect(page).to have_css('.parks', count: 16)
     within(first('.parks')) do
